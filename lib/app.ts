@@ -47,6 +47,9 @@ class App {
         });
     }
 
+    /**
+     * 日志内容配置
+     */
     private logConfig(){
         this.app.use(morgan('short'))
     }
