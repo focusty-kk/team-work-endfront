@@ -48,7 +48,7 @@ class App {
     }
 
     /**
-     * 日志内容配置
+     * 日志内容配置 kkkk
      */
     private logConfig(){
         this.app.use(morgan('short'))
@@ -88,5 +88,6 @@ class App {
     }
 
 }
+// git experiment
 
 export default new App().app;
