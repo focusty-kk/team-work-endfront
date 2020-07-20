@@ -16,7 +16,7 @@ export class ArticlesController {
       title: req.body.input_title,
       content: req.body.input_content
     };
-    Object.assign(params, {"usr_id": req.session.usr_id});
+    Object.assign(params, {"article_id": req.session.usr_id});
     const articleModel = new ArticleModel(params);
     articleModel.save((err, article) => {
       if (err) {

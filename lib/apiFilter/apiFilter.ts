@@ -31,6 +31,7 @@ export const apiFilter = (req: Request, res: Response, next: NextFunction) => {
         next()
       } else {
         res.json(dtoUtil().falseDto("登录超时，请重新登录"))
+        // res.redirect('http://localhost:8080/pages/loginPage')
       }
     })
   }

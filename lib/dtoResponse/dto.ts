@@ -51,7 +51,6 @@ class DtoObj {
 }
 
 export const dtoUtil = (message?: string) => {
-  const Dto: DtoObj = new DtoObj(message);
-  return Dto
+  return new DtoObj(message)
 };
 

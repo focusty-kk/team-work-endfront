@@ -48,9 +48,9 @@ class App {
     }
 
     /**
-     * 日志内容配置 kkkk
+     * 日志内容配置
      */
-    private logConfig(){
+    private logConfig() {
         this.app.use(morgan('short'))
     }
 
@@ -60,12 +60,15 @@ class App {
         // serving static files
         this.app.use(express.static('public'));
     }
-    private parserCookie():void{
+
+    private parserCookie(): void {
         this.app.use(cookieParser('sessions'))
     }
-    private apiFilterParser(){
+
+    private apiFilterParser() {
         this.app.use(apiFilter)
     }
+
     // todo session包
     private sessioncfg(): void {
         this.app.use(session({
@@ -77,7 +80,7 @@ class App {
             cookie: {maxAge: 900000}, //保存时效
             store: new MongoStore({
                 mongooseConnection: mongoose.connection,
-                collection : 'sessions'
+                collection: 'sessions'
             })
         }))
     }
@@ -88,6 +91,5 @@ class App {
     }
 
 }
-// git experiment 测试分支提交主干haha哈哈哈哈哈哈
 
 export default new App().app;
